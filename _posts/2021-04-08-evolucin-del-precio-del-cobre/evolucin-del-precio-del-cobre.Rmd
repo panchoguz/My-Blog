@@ -1,7 +1,7 @@
 ---
 title: "Evolución precio del cobre"
 description: |
-  El siguiente post...
+  Construcción de un gráfico con indicaciones paso por paso. Datos: Cochilco.
 author:
   - name: Francisco Guzmán
     url: https://example.com/panguz
@@ -14,7 +14,6 @@ output:
 categories:
   - ggplot2
   - Cobre
-draf = false
 ---
 
 <style>
