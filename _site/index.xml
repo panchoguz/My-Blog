@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Mi Blog</title>
+    <link>https://https://panguz.cl</link>
+    <atom:link href="https://https://panguz.cl/index.xml" rel="self" type="application/rss+xml"/>
+    <description>Explorando My Blog
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Fri, 09 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Evolución precio del cobre</title>
+      <dc:creator>Francisco Guzmán</dc:creator>
+      <link>https://https://panguz.cl/posts/2021-04-08-evolucin-del-precio-del-cobre</link>
+      <description>El siguiente post...</description>
+      <category>ggplot2</category>
+      <category>Cobre</category>
+      <guid>https://https://panguz.cl/posts/2021-04-08-evolucin-del-precio-del-cobre</guid>
+      <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://https://panguz.cl/posts/2021-04-08-evolucin-del-precio-del-cobre/distill-preview.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Sindicatos</title>
+      <dc:creator>Francisco Guzmán</dc:creator>
+      <link>https://https://panguz.cl/posts/2021-04-07-ps-1</link>
+      <description>El siguiente post desarrolla un ejercicio de un problem set del curso ENMIC405 otoño 2020.</description>
+      <category>Economía Laboral</category>
+      <category>Microeconomía III</category>
+      <guid>https://https://panguz.cl/posts/2021-04-07-ps-1</guid>
+      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://https://panguz.cl/posts/2021-04-07-ps-1/distill-preview.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Regresión Lineal en R</title>
+      <dc:creator>Francisco Guzmán</dc:creator>
+      <link>https://https://panguz.cl/posts/2021-04-07-regresin-lineal-en-r</link>
+      <description>El siguiente post desarrolla una guía de ejercicios del profesor Víctor Macías.</description>
+      <category>regresion lineal</category>
+      <guid>https://https://panguz.cl/posts/2021-04-07-regresin-lineal-en-r</guid>
+      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://https://panguz.cl/posts/2021-04-07-regresin-lineal-en-r/distill-preview.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+  </channel>
+</rss>

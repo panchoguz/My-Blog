@@ -1,0 +1,9 @@
+---
+title: "Acerca de este blog"
+description: |
+  El presente blog muestra diversos ejercicios relacionados al entorno R.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```

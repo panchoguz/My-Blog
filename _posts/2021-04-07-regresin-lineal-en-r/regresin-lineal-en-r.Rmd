@@ -1,0 +1,69 @@
+---
+title: "Regresión Lineal en R"
+description: |
+  El siguiente post desarrolla una guía de ejercicios del profesor Víctor Macías.
+author:
+  - name: Francisco Guzmán
+    url: https://example.com/panchoguz
+date: "`r Sys.Date()`"
+output: 
+  distill::distill_article:
+    toc: true
+    toc_float: true
+    toc_depth: 3
+categories:
+  - regresion lineal
+  
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Pregunta 1
+La base de datos *ceosal1.dta* contiene información correspondiente al año 1990, sobre 209 CEO. Los datos son usados en el libro “Introducción a la econometría” de Jeffrey Wooldridge.
+
+Usando estos datos se estimará el siguiente modelo que muestra la relación entre el rendimiento sobre el capital y el sueldo anual que reciben los CEO:
+
+$$salary=\beta_0+\beta_1roe+u$$
+donde el parámetro de interés es $\beta_1$ que mide la variación del sueldo anual, en miles de dólares, que corresponde a un incremento de un punto porcentual en el rendimiento sobre el capital. 
+
+```{r, include=FALSE}
+library(stargazer)
+library(ggplot2)
+library(dplyr)
+library(wooldridge)
+library(haven)
+
+ceosal1 <- read_dta("ceosal1.dta")
+```
+
+### a) Relación entre $roe$ y salarios:
+```{r, echo=T}
+g1 <- ceosal1 %>% ggplot(aes(x = roe, y = salary)) + geom_point() +
+labs(x = "Rendimiento sobre el capital (%)", y = "Salario de CEO (miles de dólares)") + theme_bw()
+g1
+
+```
+
+### b) Estimación MCO
+```{r, echo=TRUE}
+model <- lm(salary ~ roe, data = ceosal1)
+summary(model)
+```
+
+### c) Gráfico de regresión
+```{r, echo=TRUE}
+g2<- ggplot(ceosal1, aes(x = roe, y = salary)) + geom_point() +
+geom_smooth(method = "lm", se = FALSE, color = "red") +
+labs(x = "Rendimiento sobre el capital (%)", y = "Salario CEO (miles de dólares)") +
+theme_bw()
+g2
+```
+
+

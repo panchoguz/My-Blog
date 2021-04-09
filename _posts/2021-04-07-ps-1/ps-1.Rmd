@@ -1,0 +1,75 @@
+---
+title: "Sindicatos"
+description: |
+  El siguiente post desarrolla un ejercicio de un problem set del curso ENMIC405 otoño 2020.
+author:
+  - name: Francisco Guzmán
+    url: https://example.com/panchoguz
+date: "`r Sys.Date()`"
+output: 
+  distill::distill_article:
+    toc: true
+    toc_float: true
+    toc_depth: 3
+categories:
+  - Economía Laboral
+  - Microeconomía III
+  
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+En este sección se le solicita estudiar los efectos del alza del precio del cobre durante los años 2009 a 2013 (superciclo cobre) en el nivel de sindicalización en determinadas industrias. Para esto, usted dispone de los datos recopilados por la Encuesta Laboral (ENCLA) de la Dirección del Trabajo, para los años 2008, 2011 y 2014.
+
+### a) Compare las características del sindicalismo en Chile respecto a la OCDE.
+
+Utilizaremos el siguiente paquete, el cual debe estar previamente instalado con el comando *install.packages("OECD")*:
+
+```{r, echo=TRUE}
+library(OECD)
+```
+
+A menos que conozcamos el código exacto de la base a utilizar, se recomienda crear un *dataframe* con todas las bases disponibles y buscar en ella la base que nos sirva.
+
+```{r, echo=TRUE}
+df <- get_datasets()
+search_dataset("union", data = df)
+```
+Descargamos y exploramos la base de interés. Para esto último, utilizamos el comando **describe()**, para el cual debe estar instalado el paquete *Hmisc*:
+
+
+```{r, echo=TRUE, results='hide'}
+df <- get_dataset("TUD")
+attach(df)
+
+library(Hmisc)
+describe(df)
+
+table(COU)
+```
+
+Luego de analizar, realizamos unos filtros para quedarnos con las variables y categorías de interés:
+
+```{r, echo=TRUE}
+library(dplyr)
+df <- subset(df, select = c("COU", "SOURCE", "UNIT", "obsTime", "obsValue")) %>%
+  filter(COU %in% c("CHL", "GRC", "POL", "TUR"), UNIT == "PC", obsTime>2000)
+
+```
+
+Graficamos:
+
+```{r, echo=TRUE}
+ggplot(df, aes(obsTime, obsValue, group = COU)) +
+  geom_line(aes(color = COU)) +
+  labs(title = "Tasa de Sindicalización", subtitle = "Período 2000-2018", caption = "Fuente: Elaboración propia") +
+  xlab("Año") + ylab("Tasa (%)") + scale_x_discrete(breaks = c(2001, 2005, 2009, 2013, 2017)) +
+  scale_y_continuous(limits = c(0, 30)) + theme_minimal()
+```
