@@ -1,5 +1,5 @@
 ---
-title: "Mi Blog"
+title: "Publicaciones"
 site: distill::distill_website
 listing: posts
 ---

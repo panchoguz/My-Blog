@@ -19,26 +19,5 @@
       <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
       <media:content url="https://https://panguz.cl/posts/2021-04-08-evolucin-del-precio-del-cobre/distill-preview.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
-    <item>
-      <title>Sindicatos</title>
-      <dc:creator>Francisco Guzmán</dc:creator>
-      <link>https://https://panguz.cl/posts/2021-04-07-ps-1</link>
-      <description>El siguiente post desarrolla un ejercicio de un problem set del curso ENMIC405 otoño 2020.</description>
-      <category>Economía Laboral</category>
-      <category>Microeconomía III</category>
-      <guid>https://https://panguz.cl/posts/2021-04-07-ps-1</guid>
-      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://https://panguz.cl/posts/2021-04-07-ps-1/distill-preview.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
-    <item>
-      <title>Regresión Lineal en R</title>
-      <dc:creator>Francisco Guzmán</dc:creator>
-      <link>https://https://panguz.cl/posts/2021-04-07-regresin-lineal-en-r</link>
-      <description>El siguiente post desarrolla una guía de ejercicios del profesor Víctor Macías.</description>
-      <category>regresion lineal</category>
-      <guid>https://https://panguz.cl/posts/2021-04-07-regresin-lineal-en-r</guid>
-      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://https://panguz.cl/posts/2021-04-07-regresin-lineal-en-r/distill-preview.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
   </channel>
 </rss>

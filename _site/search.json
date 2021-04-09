@@ -6,14 +6,14 @@
       "description": "El presente blog muestra diversos ejercicios relacionados al entorno R.",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-09T14:15:30-04:00"
+      "last_modified": "2021-04-09T16:39:14-04:00"
     },
     {
       "path": "index.html",
-      "title": "Mi Blog",
+      "title": "Publicaciones",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-09T14:15:30-04:00"
+      "last_modified": "2021-04-09T16:40:03-04:00"
     }
   ],
   "collections": ["posts/posts.json"]

@@ -20,48 +20,5 @@
     "input_file": {},
     "preview_width": 1248,
     "preview_height": 768
-  },
-  {
-    "path": "posts/2021-04-07-ps-1/",
-    "title": "Sindicatos",
-    "description": "El siguiente post desarrolla un ejercicio de un problem set del curso ENMIC405 otoño 2020.",
-    "author": [
-      {
-        "name": "Francisco Guzmán",
-        "url": "https://example.com/panchoguz"
-      }
-    ],
-    "date": "2021-04-08",
-    "categories": [
-      "Economía Laboral",
-      "Microeconomía III"
-    ],
-    "contents": "\r\n\r\nContents\r\na) Compare las características del sindicalismo en Chile respecto a la OCDE.\r\n\r\n\r\nbody {\r\ntext-align: justify}\r\nEn este sección se le solicita estudiar los efectos del alza del precio del cobre durante los años 2009 a 2013 (superciclo cobre) en el nivel de sindicalización en determinadas industrias. Para esto, usted dispone de los datos recopilados por la Encuesta Laboral (ENCLA) de la Dirección del Trabajo, para los años 2008, 2011 y 2014.\r\na) Compare las características del sindicalismo en Chile respecto a la OCDE.\r\nUtilizaremos el siguiente paquete, el cual debe estar previamente instalado con el comando install.packages(“OECD”):\r\n\r\n\r\nlibrary(OECD)\r\n\r\n\r\n\r\nA menos que conozcamos el código exacto de la base a utilizar, se recomienda crear un dataframe con todas las bases disponibles y buscar en ella la base que nos sirva.\r\n\r\n\r\ndf <- get_datasets()\r\nsearch_dataset(\"union\", data = df)\r\n\r\n\r\n       id                                                  title\r\n34    TUD                                            Trade Union\r\n231 REVEU [Discontinued] VAT and Customs duties - European Union\r\n\r\nDescargamos y exploramos la base de interés. Para esto último, utilizamos el comando describe(), para el cual debe estar instalado el paquete Hmisc:\r\n\r\n\r\ndf <- get_dataset(\"TUD\")\r\nattach(df)\r\n\r\nlibrary(Hmisc)\r\ndescribe(df)\r\n\r\ntable(COU)\r\n\r\n\r\n\r\nLuego de analizar, realizamos unos filtros para quedarnos con las variables y categorías de interés:\r\n\r\n\r\nlibrary(dplyr)\r\ndf <- subset(df, select = c(\"COU\", \"SOURCE\", \"UNIT\", \"obsTime\", \"obsValue\")) %>%\r\n  filter(COU %in% c(\"CHL\", \"GRC\", \"POL\", \"TUR\"), UNIT == \"PC\", obsTime>2000)\r\n\r\n\r\n\r\nGraficamos:\r\n\r\n\r\nggplot(df, aes(obsTime, obsValue, group = COU)) +\r\n  geom_line(aes(color = COU)) +\r\n  labs(title = \"Tasa de Sindicalización\", subtitle = \"Período 2000-2018\", caption = \"Fuente: Elaboración propia\") +\r\n  xlab(\"Año\") + ylab(\"Tasa (%)\") + scale_x_discrete(breaks = c(2001, 2005, 2009, 2013, 2017)) +\r\n  scale_y_continuous(limits = c(0, 30)) + theme_minimal()\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-    "preview": "posts/2021-04-07-ps-1/distill-preview.png",
-    "last_modified": "2021-04-08T16:13:10-04:00",
-    "input_file": {},
-    "preview_width": 1248,
-    "preview_height": 768
-  },
-  {
-    "path": "posts/2021-04-07-regresin-lineal-en-r/",
-    "title": "Regresión Lineal en R",
-    "description": "El siguiente post desarrolla una guía de ejercicios del profesor Víctor Macías.",
-    "author": [
-      {
-        "name": "Francisco Guzmán",
-        "url": "https://example.com/panchoguz"
-      }
-    ],
-    "date": "2021-04-08",
-    "categories": [
-      "regresion lineal"
-    ],
-    "contents": "\r\n\r\nContents\r\nPregunta 1\r\na) Relación entre \\(roe\\) y salarios:\r\nb) Estimación MCO\r\nc) Gráfico de regresión\r\n\r\n\r\n\r\nbody {\r\ntext-align: justify}\r\nPregunta 1\r\nLa base de datos ceosal1.dta contiene información correspondiente al año 1990, sobre 209 CEO. Los datos son usados en el libro “Introducción a la econometría” de Jeffrey Wooldridge.\r\nUsando estos datos se estimará el siguiente modelo que muestra la relación entre el rendimiento sobre el capital y el sueldo anual que reciben los CEO:\r\n\\[salary=\\beta_0+\\beta_1roe+u\\] donde el parámetro de interés es \\(\\beta_1\\) que mide la variación del sueldo anual, en miles de dólares, que corresponde a un incremento de un punto porcentual en el rendimiento sobre el capital.\r\na) Relación entre \\(roe\\) y salarios:\r\n\r\n\r\ng1 <- ceosal1 %>% ggplot(aes(x = roe, y = salary)) + geom_point() +\r\nlabs(x = \"Rendimiento sobre el capital (%)\", y = \"Salario de CEO (miles de dólares)\") + theme_bw()\r\ng1\r\n\r\n\r\n\r\n\r\nb) Estimación MCO\r\n\r\n\r\nmodel <- lm(salary ~ roe, data = ceosal1)\r\nsummary(model)\r\n\r\n\r\n\r\nCall:\r\nlm(formula = salary ~ roe, data = ceosal1)\r\n\r\nResiduals:\r\n    Min      1Q  Median      3Q     Max \r\n-1160.2  -526.0  -254.0   138.8 13499.9 \r\n\r\nCoefficients:\r\n            Estimate Std. Error t value Pr(>|t|)    \r\n(Intercept)   963.19     213.24   4.517 1.05e-05 ***\r\nroe            18.50      11.12   1.663   0.0978 .  \r\n---\r\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\r\n\r\nResidual standard error: 1367 on 207 degrees of freedom\r\nMultiple R-squared:  0.01319,   Adjusted R-squared:  0.008421 \r\nF-statistic: 2.767 on 1 and 207 DF,  p-value: 0.09777\r\n\r\nc) Gráfico de regresión\r\n\r\n\r\ng2<- ggplot(ceosal1, aes(x = roe, y = salary)) + geom_point() +\r\ngeom_smooth(method = \"lm\", se = FALSE, color = \"red\") +\r\nlabs(x = \"Rendimiento sobre el capital (%)\", y = \"Salario CEO (miles de dólares)\") +\r\ntheme_bw()\r\ng2\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-    "preview": "posts/2021-04-07-regresin-lineal-en-r/distill-preview.png",
-    "last_modified": "2021-04-08T19:47:57-04:00",
-    "input_file": {},
-    "preview_width": 1248,
-    "preview_height": 768
   }
 ]
