@@ -3,13 +3,17 @@ title: "Panguz Blog"
 description: |
   Panguz Blog
 base_url: https://panguz.netlify.app/
-output_dir: _site
+output_dir: "_site"
 navbar:
   right:
     - text: "Casa"
       href: index.html
     - text: "Sobre mi"
       href: about.html
+#    - icon: fa fa-rss
+#      href: index.xml
+  source_url: true
+
 output: distill::distill_article
 full_content: true
 collections:
@@ -19,6 +23,6 @@ collections:
     authors_metadata: true
     disqus:
       shortname: panguz-blog
-      hidden: True
+      hidden: false
     share: [twitter, facebook, linkedin]
     citations: false
