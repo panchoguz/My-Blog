@@ -6,14 +6,14 @@
       "description": "Hola! Mi nombre es Francisco y te doy la mejor de las bienvenidas a mi blog!",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-10T14:18:35-04:00"
+      "last_modified": "2021-04-10T16:58:09-04:00"
     },
     {
       "path": "index.html",
       "title": "Publicaciones",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-10T14:18:35-04:00"
+      "last_modified": "2021-04-10T16:58:09-04:00"
     }
   ],
   "collections": ["posts/posts.json"]
