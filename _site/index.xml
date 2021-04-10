@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
-    <title>Mi Blog</title>
-    <link>https://https://panguz.cl</link>
-    <atom:link href="https://https://panguz.cl/index.xml" rel="self" type="application/rss+xml"/>
-    <description>Explorando My Blog
+    <title>Panguz Blog</title>
+    <link>https://panguz.netlify.app/</link>
+    <atom:link href="https://panguz.netlify.app/index.xml" rel="self" type="application/rss+xml"/>
+    <description>Panguz Blog
 </description>
     <generator>Distill</generator>
     <lastBuildDate>Fri, 09 Apr 2021 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Evolución precio del cobre</title>
       <dc:creator>Francisco Guzmán</dc:creator>
-      <link>https://https://panguz.cl/posts/2021-04-08-evolucin-del-precio-del-cobre</link>
+      <link>https://panguz.netlify.app/posts/2021-04-08-evolucin-del-precio-del-cobre</link>
       <description>Construcción de un gráfico con indicaciones paso por paso. Datos: Cochilco.</description>
       <category>ggplot2</category>
       <category>Cobre</category>
-      <guid>https://https://panguz.cl/posts/2021-04-08-evolucin-del-precio-del-cobre</guid>
+      <guid>https://panguz.netlify.app/posts/2021-04-08-evolucin-del-precio-del-cobre</guid>
       <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://https://panguz.cl/posts/2021-04-08-evolucin-del-precio-del-cobre/distill-preview.png" medium="image" type="image/png" width="1248" height="768"/>
+      <media:content url="https://panguz.netlify.app/posts/2021-04-08-evolucin-del-precio-del-cobre/distill-preview.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
   </channel>
 </rss>
