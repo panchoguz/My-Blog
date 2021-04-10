@@ -1,7 +1,7 @@
 ---
-title: "Acerca de este blog"
+title: "Sobre mí"
 description: |
-  El presente blog muestra diversos ejercicios relacionados al entorno R.
+  Hola! Mi nombre es Francisco y te doy la mejor de las bienvenidas a mi blog!
 ---
 
 ```{r setup, include=FALSE}

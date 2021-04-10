@@ -8,7 +8,7 @@ navbar:
   right:
     - text: "Casa"
       href: index.html
-    - text: "Acerca"
+    - text: "Sobre mi"
       href: about.html
 output: distill::distill_article
 full_content: true
@@ -18,7 +18,7 @@ collections:
     categories_metadata: true
     authors_metadata: true
     disqus:
-      shortname: mi-blog
+      shortname: panguz-blog
       hidden: True
     share: [twitter, facebook, linkedin]
     citations: false
