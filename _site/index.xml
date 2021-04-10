@@ -7,7 +7,21 @@
     <description>Panguz Blog
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 09 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Tasa de sindicalización</title>
+      <dc:creator>Francisco Guzmán</dc:creator>
+      <link>https://panguz.netlify.app/posts/2021-04-07-ps-1</link>
+      <description>Construcción de un gráfico con la tasa de sindicalización de algunos países OCDE, período 2000-2018. Datos: library(OECD).</description>
+      <category>Eco Laboral</category>
+      <category>OECD</category>
+      <category>tidyverse</category>
+      <category>Hmisc</category>
+      <category>skimr</category>
+      <guid>https://panguz.netlify.app/posts/2021-04-07-ps-1</guid>
+      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://panguz.netlify.app/posts/2021-04-07-ps-1/distill-preview.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Evolución precio del cobre</title>
       <dc:creator>Francisco Guzmán</dc:creator>

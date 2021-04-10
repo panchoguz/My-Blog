@@ -4,7 +4,7 @@ description: |
   Construcción de un gráfico con indicaciones paso por paso. Datos: Cochilco.
 author:
   - name: Francisco Guzmán
-    url: https://example.com/panguz
+    #url: https://example.com/panguz
 date: "`r Sys.Date()`"
 output: 
   distill::distill_article:
@@ -24,52 +24,6 @@ text-align: justify}
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-
-# Resultado esperado
-
-```{r}
-
-library(readxl)
-library(ggplot2)
-library(tidyverse)
-
-setwd("~/Todo R/My Blog/_posts/2021-04-08-evolucin-del-precio-del-cobre")
-
-df <- read_excel("datos.xlsx")
-
-names(df)[1] <- "Fecha"
-names(df)[2] <- "Precio"
-
-df$Fecha <- as.Date(df$Fecha)
-
-plast <- df %>% #precio más reciente
-  slice(which.max(Fecha))
-
-ggplot(data = df, aes(Fecha, Precio)) +
-  geom_line(colour = "navy")+ 
-  labs(title = "Precio Nominal Cobre Mensual (¢/lb)",
-                      subtitle = "Período 2000-2021",
-                      caption = "Fuente: Elaboración propia en base a datos de Cochilco",
-                      tag = "",
-                      x = "",
-                      y = "") + 
-  theme_minimal() +
-  theme(plot.title = element_text(size = rel(1.35)),
-        plot.subtitle = element_text(size = rel(1), margin=margin(0,0,20,0)),
-        plot.caption = element_text(hjust = 0, face= "italic")) +
-  annotate("rect", fill = "darkgreen", alpha = 0.2,
-           xmin = as.Date("2009-11-01"), xmax = as.Date("2013-05-01"),
-           ymin = -Inf, ymax = Inf) +
-  annotate(geom="text",x=as.Date("2011-08-01"),
-           y=490, label="superciclo 09'-13'", fontface="plain", size=3) +
-  geom_hline(yintercept = tail(df$Precio, n=1), linetype="dashed",
-             color = "red", size = .5) +
-  geom_text(data = plast,
-            aes(x = Fecha, y = Precio,
-                label = sprintf("%0.1f", round(Precio, digits = 3))), size = 3,
-            vjust = -.5, hjust = .5, col = "red")
-```
-
 
 # Paso a paso
 

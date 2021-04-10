@@ -1,21 +1,24 @@
 ---
-title: "Sindicatos"
+title: "Tasa de sindicalización"
 description: |
-  El siguiente post desarrolla un ejercicio de un problem set del curso ENMIC405 otoño 2020.
+  Construcción de un gráfico con la tasa de sindicalización de algunos países OCDE, período 2000-2018. Datos: library(OECD).
 author:
   - name: Francisco Guzmán
-    url: https://example.com/panchoguz
+    #url: https://example.com/panchoguz
 date: "`r Sys.Date()`"
 output: 
   distill::distill_article:
     toc: true
     toc_float: true
-    toc_depth: 3
+    toc_depth: 4
 categories:
-  - Economía Laboral
-  - Microeconomía III
-draft: true
-  
+  - Eco Laboral
+  - OECD
+  - tidyverse
+  - Hmisc
+  - skimr
+
+draft: false
 ---
 
 <style>
@@ -23,49 +26,49 @@ body {
 text-align: justify}
 </style>
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+# Paso a paso
 
-En este sección se le solicita estudiar los efectos del alza del precio del cobre durante los años 2009 a 2013 (superciclo cobre) en el nivel de sindicalización en determinadas industrias. Para esto, usted dispone de los datos recopilados por la Encuesta Laboral (ENCLA) de la Dirección del Trabajo, para los años 2008, 2011 y 2014.
-
-### a) Compare las características del sindicalismo en Chile respecto a la OCDE.
-
-Utilizaremos el siguiente paquete, el cual debe estar previamente instalado con el comando *install.packages("OECD")*:
+## Librerías
 
 ```{r, echo=TRUE}
 library(OECD)
+library(tidyverse)
+library(Hmisc)
+library(skimr)
+
 ```
 
-A menos que conozcamos el código exacto de la base a utilizar, se recomienda crear un *dataframe* con todas las bases disponibles y buscar en ella la base que nos sirva.
+## Análisis de la base
+
+La base la obtendremos desde la librería *OECD*. A menos que conozcamos la sigla exacta de la base a utilizar, se recomienda crear un *dataframe*, que nombraremos *df*, con todas las bases disponibles que nos otorga la librería *OECD* y buscar en este la base que queramos. Para esto último, buscaremos *"union"*, dado que en inglés a los sindicatos se les denomina *trade union*.
 
 ```{r, echo=TRUE}
+
 df <- get_datasets()
 search_dataset("union", data = df)
-```
-Descargamos y exploramos la base de interés. Para esto último, utilizamos el comando **describe()**, para el cual debe estar instalado el paquete *Hmisc*:
 
+```
+Identificamos nuestra base de interés (*TUD*), la descargamos y la exploramos. Para esto último, utilizamos el comando **skim()** y **describe()**.
 
 ```{r, echo=TRUE, results='hide'}
-df <- get_dataset("TUD")
-attach(df)
 
-library(Hmisc)
+df <- get_dataset("TUD")
+
+skim(df)
 describe(df)
 
-table(COU)
 ```
 
-Luego de analizar, realizamos unos filtros para quedarnos con las variables y categorías de interés:
+Luego del análisis, realizamos algunos filtros para quedarnos con las variables y categorías de interés. Seleccionamos algunos países, un período más acotado y la unidad con que trabajaremos (*PC*, por porcentaje).
 
 ```{r, echo=TRUE}
-library(dplyr)
+
 df <- subset(df, select = c("COU", "SOURCE", "UNIT", "obsTime", "obsValue")) %>%
   filter(COU %in% c("CHL", "GRC", "POL", "TUR"), UNIT == "PC", obsTime>2000)
 
 ```
 
-Graficamos:
+## Gráfico
 
 ```{r, echo=TRUE}
 ggplot(df, aes(obsTime, obsValue, group = COU)) +
@@ -73,4 +76,10 @@ ggplot(df, aes(obsTime, obsValue, group = COU)) +
   labs(title = "Tasa de Sindicalización", subtitle = "Período 2000-2018", caption = "Fuente: Elaboración propia") +
   xlab("Año") + ylab("Tasa (%)") + scale_x_discrete(breaks = c(2001, 2005, 2009, 2013, 2017)) +
   scale_y_continuous(limits = c(0, 30)) + theme_minimal()
+
+```
+
+# Código
+
+```{r ref.label=knitr::all_labels(), echo = T, eval = F}
 ```
