@@ -3,7 +3,7 @@ title: "Panguz Blog"
 description: |
   Panguz Blog
 base_url: https://panguz.netlify.app/
-output_dir: "_site"
+output_dir: _site
 navbar:
   right:
     - text: "Casa"
