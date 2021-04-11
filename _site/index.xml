@@ -7,7 +7,18 @@
     <description>Panguz Blog
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 10 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Evolución precio del cobre</title>
+      <dc:creator>Francisco Guzmán</dc:creator>
+      <link>https://panguz.netlify.app/posts/2021-04-08-evolucin-del-precio-del-cobre</link>
+      <description>Construcción de un gráfico con indicaciones paso por paso. Datos: Cochilco.</description>
+      <category>ggplot2</category>
+      <category>tidyverse</category>
+      <guid>https://panguz.netlify.app/posts/2021-04-08-evolucin-del-precio-del-cobre</guid>
+      <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://panguz.netlify.app/posts/2021-04-08-evolucin-del-precio-del-cobre/Rplot01.png" medium="image" type="image/png" width="495" height="332"/>
+    </item>
     <item>
       <title>Tasa de sindicalización</title>
       <dc:creator>Francisco Guzmán</dc:creator>
@@ -21,17 +32,6 @@
       <guid>https://panguz.netlify.app/posts/2021-04-07-ps-1</guid>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
       <media:content url="https://panguz.netlify.app/posts/2021-04-07-ps-1/distill-preview.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
-    <item>
-      <title>Evolución precio del cobre</title>
-      <dc:creator>Francisco Guzmán</dc:creator>
-      <link>https://panguz.netlify.app/posts/2021-04-08-evolucin-del-precio-del-cobre</link>
-      <description>Construcción de un gráfico con indicaciones paso por paso. Datos: Cochilco.</description>
-      <category>ggplot2</category>
-      <category>Cobre</category>
-      <guid>https://panguz.netlify.app/posts/2021-04-08-evolucin-del-precio-del-cobre</guid>
-      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://panguz.netlify.app/posts/2021-04-08-evolucin-del-precio-del-cobre/distill-preview.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
   </channel>
 </rss>

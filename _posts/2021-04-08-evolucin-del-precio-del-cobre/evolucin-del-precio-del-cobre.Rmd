@@ -9,11 +9,13 @@ date: "`r Sys.Date()`"
 output: 
   distill::distill_article:
     toc: true
+    number_sections: true
     toc_float: true
     toc_depth: 4
 categories:
   - ggplot2
-  - Cobre
+  - tidyverse
+preview: 'Rplot01.png'
 ---
 
 <style>
@@ -197,7 +199,6 @@ ggplot(data = df, aes(Fecha, Precio)) +
                 label = sprintf("%0.1f", round(Precio, digits = 3))), size = 3,
             vjust = -.5, hjust = .5, col = "red")
 ```
-
 
 # Referencias
 
