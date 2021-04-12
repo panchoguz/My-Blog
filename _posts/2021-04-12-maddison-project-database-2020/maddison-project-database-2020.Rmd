@@ -77,6 +77,7 @@ Dada la información de los dos pasos anteriores, filtramos la base para dejarla
 df_graf1 <- mpd2020 %>%
   filter(countrycode %in% c("CHL", "NOR", "SWE", "FIN", "NZL", "AUS"),
          year>=1800)
+
 ```
 
 # Gráfico
@@ -99,12 +100,14 @@ g1 <- ggplot(data = df_graf1, aes(year, gdppc, color=country)) +
   theme(plot.title = element_text(size = rel(1.2)),
         plot.subtitle = element_text(size = rel(1), margin=margin(0,0,20,0)),
         plot.caption = element_text(hjust = 0, face= "italic"),
-        axis.text.x = element_text(angle = 90, vjust=.5, size = 8),
-        axis.text.y = element_text(angle = 0, vjust=0, size = 8),
-        axis.ticks.x = element_line(size = 0),
+        axis.text.x = element_text(angle = 90, vjust=.5, size = 10),
+        axis.text.y = element_text(angle = 0, vjust=0, size = 10),
+        axis.ticks.length.x = unit(.25, "cm"),
+        axis.ticks.x = element_line(size = .5),
         axis.ticks.y = element_blank(),
         panel.grid.major.y = element_line(colour = "grey90"),
         panel.grid.minor.y = element_line(colour = "grey90"))
+
 ```
 
 ```{r, echo=FALSE}
@@ -120,7 +123,7 @@ ggsave(g1, filename = "plot.eps", device = cairo_ps, dpi = 300,
  width = 18, height = 13.5, units = "cm")
 ```
 
-```{r}
+```{r, echo=FALSE}
 knitr::include_graphics("plot.png")
 ```
 
