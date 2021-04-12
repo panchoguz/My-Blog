@@ -59,7 +59,7 @@ unique(mpd2020[c("countrycode", "country")])
 
 ```
 
-## tapply()
+## summary()
 Con el siguiente comando nos interesa ver el período que comprenderá el gráfico, tomando en cuenta los datos disponibles para Chile. 
 
 ```{r, results='hide'}
