@@ -21,7 +21,7 @@ categories:
   - scales
   
 #preview: "plot.png"
-draft: false
+draft: true
 ---
 
 <style>
@@ -42,4 +42,3 @@ text-align: justify}
 
 # Referencias
 
-* [ggplotly](https://plotly.com/ggplot2/)

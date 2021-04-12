@@ -131,6 +131,7 @@ knitr::include_graphics("plot.png")
 ```
 
 ## plotly()
+Con este comando obtenenmos un gráfico interactivo.
 
 ```{r}
 fig <- ggplotly(g1)
@@ -146,4 +147,5 @@ fig
 # Referencias
 
 * [ggplot2](https://ggplot2.tidyverse.org/reference/index.html)
+* [ggplotly](https://plotly.com/ggplot2/)
 * [Maddison Project Database 2020](https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2020)
