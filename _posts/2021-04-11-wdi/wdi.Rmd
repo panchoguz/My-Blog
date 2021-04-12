@@ -1,7 +1,7 @@
 ---
 title: "WDI"
 description: |
-  A short description of the post.
+  Comparación del PIB per cápita real (PPA) entre países. Datos: Banco Mundial (utilizando paquete WDI).
 author:
   - name: Francisco Guzmán
     #url: https://example.com/panguz
@@ -18,6 +18,7 @@ categories:
   - ggplot2
   - ggthemes
   - Cairo
+  - scales
   
 preview: "plot.png"
 draft: false
@@ -36,6 +37,7 @@ library(dplyr)
 library(ggplot2)
 library(ggthemes)
 library(Cairo)
+library(scales)
 
 ```
 
@@ -49,7 +51,7 @@ WDIsearch('gdp.*ppp.*constant')
 
 ```
 
-Dadas las 5 opciones que nos muestra el resultado, para efectos de este artículo, nos quedaremos con la primera *"GDP per capita, PPP (constant 2017 international $)"*.
+Dadas las 5 opciones que nos muestra el resultado, para efectos de este artículo, nos quedaremos con la número 4: *"GDP per capita, PPP (constant 2017 international $)"*.
 
 ## Descarga
 Con el siguiente comando podemos obtener la base y aplicar filtros previos.
@@ -58,7 +60,7 @@ Con el siguiente comando podemos obtener la base y aplicar filtros previos.
 df <- WDI(
   country = "all",
   indicator = "NY.GDP.PCAP.PP.KD",
-  start = 1960,
+  start = 1990,
   end = 2020,
   extra = FALSE,
   cache = NULL,
@@ -129,20 +131,18 @@ g1 <- ggplot(df, aes(year, gdp_pc, color=country)) +
   labs(title = "PIB per cápita, PPA($ a precios internacionales constantes de 2017)",
        subtitle = "Período 1990-2019",
        caption = "Fuente: Elaboración propia en base a datos del Banco Mundial",
-       tag = "",
-       x = "",
-       y = "",
-       color = NULL) +
+       col = NULL) +
   scale_color_manual(values = my_palette) +
-  xlim(1990, 2019) +
+  scale_x_continuous(breaks=seq(1990,2020, by = 5)) +
+  scale_y_continuous(labels = dollar) +
   theme_fivethirtyeight() +
   theme(plot.title = element_text(size = rel(1.05)),
-        plot.subtitle = element_text(size = rel(.85), margin=margin(0,0,20,0)),
+        plot.subtitle = element_text(size = rel(.9), margin=margin(0,0,20,0)),
         plot.caption = element_text(hjust = 0, face= "italic"),
         axis.text.x = element_text(angle = 0, vjust=1, size = 8),
-        axis.text.y = element_text(angle = 0, vjust=1, size = 8),
+        axis.text.y = element_text(angle = 0, vjust=0, size = 8),
         legend.position = "bottom",
-        panel.grid.minor = element_blank())
+        panel.grid.major = element_line(colour = "white"))
 
 ```
 
@@ -167,3 +167,9 @@ knitr::include_graphics("plot.png")
 
 ```{r ref.label=knitr::all_labels(), echo = T, eval = F}
 ```
+
+# Referencias
+
+* [ggplot2](https://ggplot2.tidyverse.org/reference/index.html)
+* [WDI](https://vincentarelbundock.github.io/WDI/)
+* 
