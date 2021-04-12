@@ -32,6 +32,7 @@
       <category>dplyr</category>
       <category>ggplot2</category>
       <category>ggthemes</category>
+      <category>plotly</category>
       <category>readxl</category>
       <category>scales</category>
       <guid>https://panguz.netlify.app/posts/2021-04-12-maddison-project-database-2020</guid>

@@ -17,6 +17,7 @@ categories:
   - dplyr
   - ggplot2
   - ggthemes
+  - plotly
   - readxl
   - scales
   
@@ -34,6 +35,7 @@ text-align: justify}
 ```{r}
 library(readxl)
 library(ggplot2)
+library(plotly)
 library(Cairo)
 library(scales)
 library(ggthemes)
@@ -81,6 +83,7 @@ df_graf1 <- mpd2020 %>%
 ```
 
 # Gráfico
+## ggplot()
 
 ```{r}
 my_palette = c("#DA0000", "#239f40", "#C4961A", "#CC79A7", "#C3D7A4", "#293352")
@@ -127,11 +130,18 @@ ggsave(g1, filename = "plot.eps", device = cairo_ps, dpi = 300,
 knitr::include_graphics("plot.png")
 ```
 
+## plotly()
+
+```{r}
+fig <- ggplotly(g1)
+fig
+```
+
+
 # Código
 
 ```{r ref.label=knitr::all_labels(), echo = T, eval = F}
 ```
-
 
 # Referencias
 

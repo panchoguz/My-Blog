@@ -1,0 +1,45 @@
+---
+title: "ggplotly"
+description: |
+ 
+author:
+  - name: Francisco Guzmán
+    #url: https://example.com/panguz
+date: "`r Sys.Date()`"
+output: 
+  distill::distill_article:
+    toc: true
+    number_sections: true
+    toc_float: true
+    toc_depth: 4
+categories:
+  - Cairo
+  - dplyr
+  - ggplot2
+  - ggthemes
+  - readxl
+  - scales
+  
+#preview: "plot.png"
+draft: false
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+# Librerías 
+
+```{r}
+
+```
+
+# Código
+
+```{r ref.label=knitr::all_labels(), echo = T, eval = F}
+```
+
+# Referencias
+
+* [ggplotly](https://plotly.com/ggplot2/)
