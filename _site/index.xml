@@ -24,6 +24,21 @@
       <media:content url="https://panguz.netlify.app/posts/2021-04-11-wdi/plot.png" medium="image" type="image/png" width="2125" height="1594"/>
     </item>
     <item>
+      <title>Maddison Project Database 2020</title>
+      <dc:creator>Francisco Guzmán</dc:creator>
+      <link>https://panguz.netlify.app/posts/2021-04-12-maddison-project-database-2020</link>
+      <description>Trabajaremos con los datos proporcionados por el Proyecto Maddison y realizaremos un gráfico que nos muestre el crecimiento del PIB per cápita de los países seleccionados.</description>
+      <category>Cairo</category>
+      <category>dplyr</category>
+      <category>ggplot2</category>
+      <category>ggthemes</category>
+      <category>readxl</category>
+      <category>scales</category>
+      <guid>https://panguz.netlify.app/posts/2021-04-12-maddison-project-database-2020</guid>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://panguz.netlify.app/posts/2021-04-12-maddison-project-database-2020/distill-preview.png" medium="image" type="image/png" width="2125" height="1594"/>
+    </item>
+    <item>
       <title>Evolución precio del cobre</title>
       <dc:creator>Francisco Guzmán</dc:creator>
       <link>https://panguz.netlify.app/posts/2021-04-08-evolucin-del-precio-del-cobre</link>
