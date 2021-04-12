@@ -9,7 +9,7 @@
     <generator>Distill</generator>
     <lastBuildDate>Mon, 12 Apr 2021 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>WDI</title>
+      <title>Paquete WDI</title>
       <dc:creator>Francisco Guzmán</dc:creator>
       <link>https://panguz.netlify.app/posts/2021-04-11-wdi</link>
       <description>Comparación del PIB per cápita real (PPA) entre países. Datos: Banco Mundial (utilizando paquete WDI).</description>

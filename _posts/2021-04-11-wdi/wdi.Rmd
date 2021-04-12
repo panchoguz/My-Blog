@@ -1,5 +1,5 @@
 ---
-title: "WDI"
+title: "Paquete WDI"
 description: |
   Comparación del PIB per cápita real (PPA) entre países. Datos: Banco Mundial (utilizando paquete WDI).
 author:
