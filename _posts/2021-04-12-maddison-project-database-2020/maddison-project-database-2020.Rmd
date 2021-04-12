@@ -128,6 +128,7 @@ ggsave(g1, filename = "plot.eps", device = cairo_ps, dpi = 300,
 
 ```{r, echo=FALSE}
 knitr::include_graphics("plot.png")
+
 ```
 
 ## plotly()
