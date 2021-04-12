@@ -20,6 +20,20 @@
       <media:content url="https://panguz.netlify.app/posts/2021-04-08-evolucin-del-precio-del-cobre/Rplot01.png" medium="image" type="image/png" width="495" height="332"/>
     </item>
     <item>
+      <title>WDI</title>
+      <dc:creator>Francisco Guzmán</dc:creator>
+      <link>https://panguz.netlify.app/posts/2021-04-11-wdi</link>
+      <description>A short description of the post.</description>
+      <category>WDI</category>
+      <category>dplyr</category>
+      <category>ggplot2</category>
+      <category>ggthemes</category>
+      <category>Cairo</category>
+      <guid>https://panguz.netlify.app/posts/2021-04-11-wdi</guid>
+      <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://panguz.netlify.app/posts/2021-04-11-wdi/plot.png" medium="image" type="image/png" width="2125" height="1594"/>
+    </item>
+    <item>
       <title>Tasa de sindicalización</title>
       <dc:creator>Francisco Guzmán</dc:creator>
       <link>https://panguz.netlify.app/posts/2021-04-07-ps-1</link>

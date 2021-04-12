@@ -6,7 +6,7 @@ base_url: https://panguz.netlify.app/
 output_dir: "_site"
 navbar:
   right:
-    - text: "Casa"
+    - text: "Publicaciones"
       href: index.html
     - text: "Sobre mi"
       href: about.html
