@@ -172,4 +172,3 @@ knitr::include_graphics("plot.png")
 
 * [ggplot2](https://ggplot2.tidyverse.org/reference/index.html)
 * [WDI](https://vincentarelbundock.github.io/WDI/)
-* 
